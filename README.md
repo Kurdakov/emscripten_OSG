@@ -1,4 +1,4 @@
 emscripten_OSG
 ==============
 
-port of OpenSceneGraph to compile with emscripten
+port of OpenSceneGraph library to be used with emscripten

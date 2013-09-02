@@ -1,0 +1,58 @@
+/* -*-c++-*-
+ *
+ */
+#ifndef OSGVIEWER_GRAPHICSWINDOWSDL
+#define OSGVIEWER_GRAPHICSWINDOWSDL 1
+
+//#include <SDL/SDL.h>
+#include "D:\test\osgWinEGL_SDL_1\test\SDL2-2.0.0\include\SDL.h"
+
+#include <osgViewer/GraphicsWindow>
+
+namespace osgViewer {
+
+class OSGVIEWER_EXPORT GraphicsWindowSDL : public GraphicsWindow {
+public:
+    GraphicsWindowSDL(osg::GraphicsContext::Traits* traits)
+	: _surface(0),
+	_initialized(false),
+	_valid(false),
+	_realized(false)
+    {
+	_traits = traits;
+
+            init();
+            
+            if (valid())
+            {
+                setState(new osg::State);
+                getState()->setGraphicsContext(this);
+	    }
+    }
+
+    bool valid() const { return _valid; }
+    virtual bool realizeImplementation();
+    virtual bool makeCurrentImplementation();
+    virtual bool isRealizedImplementation() const { return _realized; }
+    virtual void closeImplementation();
+    virtual void swapBuffersImplementation();
+    virtual bool checkEvents();
+    
+    struct WindowData : public osg::Referenced
+    {
+	WindowData(SDL_Surface* window):
+	    _window(window) {}
+                
+	SDL_Surface* _window;
+    };
+protected:
+    void init();
+    SDL_Surface* _surface;
+    bool _initialized;
+    bool _valid;
+    bool _realized;
+
+};
+}
+#endif
+

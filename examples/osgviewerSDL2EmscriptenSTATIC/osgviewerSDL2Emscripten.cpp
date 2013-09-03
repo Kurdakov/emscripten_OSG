@@ -470,6 +470,8 @@ int main( int argc, char **argv )
 	}
 #else
 	window = SDL_CreateWindow("ContextWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_OPENGL );//| SDL_WINDOW_FULLSCREEN
+	// set up the surface to render to
+	screen = SDL_GetWindowSurface(window);
 #endif
   
 

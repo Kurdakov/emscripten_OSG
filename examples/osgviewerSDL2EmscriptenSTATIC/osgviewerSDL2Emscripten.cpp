@@ -341,11 +341,11 @@ bool convertEvent(SDL_Event& event, osgGA::EventQueue& eventQueue)
             return true;
 
         case SDL_KEYUP:
-            eventQueue.keyRelease( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.unicode);
+			eventQueue.keyRelease( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.sym);
             return true;
 
         case SDL_KEYDOWN:
-            eventQueue.keyPress( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.unicode);
+            eventQueue.keyPress( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.sym);
             return true;
 
         //case SDL_VIDEORESIZE:

@@ -1,4 +1,4 @@
-/* OpenSceneGraph example, osgviewerSDL2.
+/* OpenSceneGraph example, osgviewerGlut.
 *
 *  Permission is hereby granted, free of charge, to any person obtaining a copy
 *  of this software and associated documentation files (the "Software"), to deal
@@ -21,30 +21,37 @@
 // Derived from osgGLUTsimple.cpp and osgkeyboardmouse.cpp
 
 // (C) 2013 Sergey Kurdakov  https://github.com/Kurdakov/emscripten_OSG/wiki/Introduction released under the OSGPL.
-// Simple example using SDL2 to create an OpenGL window and OSG for rendering  with Emscripten.
+// Simple example using GLUT to create an OpenGL window and OSG for rendering  with Emscripten.
 // Derived from osgviewerSDL.cpp 
 // Cube code is borrowed  from osgwTools
 
+#include <osg/Config>
 
+#if defined(_MSC_VER) && defined(OSG_DISABLE_MSVC_WARNINGS)
+    // disable warning "glutCreateMenu_ATEXIT_HACK' : unreferenced local function has been removed"
+    #pragma warning( disable : 4505 )
+#endif
+
+#include <iostream>
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+#ifdef __APPLE__
+#  include <GLUT/glut.h>
+#else
+#  include <esGLUT/esGLUT.h>
+#endif
 
 #include <osgViewer/Viewer>
 #include <osgViewer/ViewerEventHandlers>
 #include <osgGA/TrackballManipulator>
-//#include <osgDB/ReadFile>
-#include <osg/PositionAttitudeTransform>
-#include <osg/ShapeDrawable>
-#include <osg/MatrixTransform>
-#include "SDL.h"
+#include <osgDB/ReadFile>
 
-#include <iostream>
+osg::ref_ptr<osgViewer::Viewer>  viewer;
+osg::observer_ptr<osgViewer::GraphicsWindow> window;
 
-#include <osgText/Text>
-#include <osg/Geometry>
 
-#ifdef EMSCRIPTEN_
-#include <emscripten.h>
-#endif
- 
 static const char gVertexShader[] =
     "varying vec4 color;                                                    \n"
     "const vec3 lightPos      =vec3(0.0, 0.0, 10.0);                        \n"
@@ -324,223 +331,104 @@ osg::Geode* createScene() {
 }
 
 
-
-bool convertEvent(SDL_Event& event, osgGA::EventQueue& eventQueue)
+void display(void)
 {
-    switch (event.type) {
+    // update and render the scene graph
+    if (viewer.valid()) viewer->frameOSG(-1);
 
-        case SDL_MOUSEMOTION:
-            eventQueue.mouseMotion(event.motion.x, event.motion.y);
-            return true;
+    // Swap Buffers
+    glutSwapBuffers();
+    glutPostRedisplay();
+}
 
-        case SDL_MOUSEBUTTONDOWN:
-            eventQueue.mouseButtonPress(event.button.x, event.button.y, event.button.button);
-            return true;
+void reshape( int w, int h )
+{
+    // update the window dimensions, in case the window has been resized.
+    if (window.valid()) 
+    {
+        window->resized(window->getTraits()->x, window->getTraits()->y, w, h);
+        window->getEventQueue()->windowResize(window->getTraits()->x, window->getTraits()->y, w, h );
+    }
+}
 
-        case SDL_MOUSEBUTTONUP:
-            eventQueue.mouseButtonRelease(event.button.x, event.button.y, event.button.button);
-            return true;
+void mousebutton( int button, int state, int x, int y )
+{
+    if (window.valid())
+    {
+        if (state==0) window->getEventQueue()->mouseButtonPress( x, y, button+1 );
+        else window->getEventQueue()->mouseButtonRelease( x, y, button+1 );
+    }
+}
 
-        case SDL_KEYUP:
-			eventQueue.keyRelease( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.sym);
-            return true;
+void mousemove( int x, int y )
+{
+    if (window.valid())
+    {
+        window->getEventQueue()->mouseMotion( x, y );
+    }
+}
 
-        case SDL_KEYDOWN:
-            eventQueue.keyPress( (osgGA::GUIEventAdapter::KeySymbol) event.key.keysym.sym);
-            return true;
-
-        //case SDL_VIDEORESIZE:
-        //    eventQueue.windowResize(0, 0, event.resize.w, event.resize.h );
-            return true;
-
+void keyboard( unsigned char key, int /*x*/, int /*y*/ )
+{
+    switch( key )
+    {
+        case 27:
+            // clean up the viewer 
+            if (viewer.valid()) 
+			{
+				window = 0;
+				viewer = 0;
+			}
+            //glutDestroyWindow(glutGetWindow());
+            break;
         default:
+            if (window.valid())
+            {
+                window->getEventQueue()->keyPress( (osgGA::GUIEventAdapter::KeySymbol) key );
+                window->getEventQueue()->keyRelease( (osgGA::GUIEventAdapter::KeySymbol) key );
+            }
             break;
     }
-    return false;
 }
 
-
-
-osgViewer::Viewer* viewer;
-
-bool done;
-
-#ifndef EMSCRIPTEN_
-SDL_Window* window;
-SDL_Surface *screen;
-osg::ref_ptr<osgViewer::GraphicsWindowEmbedded> gw;
-#else
-
-#endif
-
-void mainloop()
-{
-	SDL_Event event;
-
-        while ( SDL_PollEvent(&event) )
-        {
-            // pass the SDL event into the viewers event queue
-            convertEvent(event, *(gw->getEventQueue()));
-
-            switch (event.type) {
-
-               /* case SDL_VIDEORESIZE:
-                    SDL_SetVideoMode(event.resize.w, event.resize.h, bitDepth, SDL_OPENGL | SDL_RESIZABLE);
-                    gw->resized(0, 0, event.resize.w, event.resize.h );
-                    break;*/
-
-                case SDL_KEYUP:
-
-                    if (event.key.keysym.sym==SDLK_ESCAPE) done = true;
-                    /*if (event.key.keysym.sym=='f') 
-                    {
-                        SDL_WM_ToggleFullScreen(screen);
-                        gw->resized(0, 0, screen->w, screen->h );
-                    }*/
-
-                    break;
-
-                case SDL_QUIT:
-					delete viewer;
-					viewer=0;
-                    done = true;
-            }
-        }
-
-        if (done) 
-		{
-			gw = 0;
-			return;//continue;
-		}
-
-	    // draw the new frame
-        viewer->frameOSG(-1.0);
-
-        // Swap Buffers
-#ifdef EMSCRIPTEN_
-		SDL_GL_SwapBuffers();
-#else
-		SDL_GL_SwapWindow(window);
-#endif //EMSCRIPTEN_
-}
 int main( int argc, char **argv )
 {
-   
-    // init SDL
-
-	
-	
-    if ( SDL_Init(SDL_INIT_VIDEO) < 0 )
-    {
-        fprintf(stderr, "Unable to init SDL: %s\n", SDL_GetError());
-        exit(1);
-    }
-    atexit(SDL_Quit);
+    glutInit(&argc, argv);
 
 
-	 SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
-     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
-     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
-     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
-     SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_ACCUM_ALPHA_SIZE, 0);
-     SDL_GL_SetAttribute(SDL_GL_STEREO, 0);
-     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 0);
-     SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 0);
-	 SDL_GL_SetAttribute(SDL_GL_RETAINED_BACKING, 1);
-
-
-	#ifndef EMSCRIPTEN_
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_EGL, 1);
-	#endif	//EMSCRIPTEN
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
-	
-
-#ifdef EMSCRIPTEN_
-	screen = SDL_SetVideoMode(640, 480,, 32, SDL_HWSURFACE | SDL_OPENGL);
-	if ( screen == NULL )
-	{
-		exit(1);
-	}
-#else
-	window = SDL_CreateWindow("ContextWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_OPENGL );//| SDL_WINDOW_FULLSCREEN
-	// set up the surface to render to
-	screen = SDL_GetWindowSurface(window);
-#endif
-  
-
-    
-   SDL_GLContext glcontext = SDL_GL_CreateContext(window);
-
-   SDL_GL_SetSwapInterval(0);
-   
-  
-
-
-     // load the scene.
+    // load the scene.
     osg::ref_ptr<osg::Node> loadedModel = createScene();
-
-
-   //loadedModel->setUseVertexBufferObject(true);
-
     if (!loadedModel)
     {
         std::cout << argv[0] <<": No data loaded." << std::endl;
         return 1;
     }
 
-    // Starting with SDL 1.2.10, passing in 0 will use the system's current resolution.
-    unsigned int windowWidth = 0;
-    unsigned int windowHeight = 0;
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH /* | GLUT_ALPHA */);
+    //glutInitWindowPosition( 100, 100 );
+    glutInitWindowSize( 800, 600 );
+    glutCreateWindow( argv[0] );
+    glutDisplayFunc( display );
+    glutReshapeFunc( reshape );
+    glutMouseFunc( mousebutton );
+    glutMotionFunc( mousemove );
+    glutKeyboardFunc( keyboard );
 
-    // Passing in 0 for bitdepth also uses the system's current bitdepth. This works before 1.2.10 too.
-    unsigned int bitDepth = 0;
-
- 
-	
-	// set up the surface to render to
-
-
-    //if ( screen == NULL )
-   // {
-    //    std::cerr<<"Unable to set "<<windowWidth<<"x"<<windowHeight<<" video: %s\n"<< SDL_GetError()<<std::endl;
-    //    exit(1);
-    //}
-
-    
-    // If we used 0 to set the fields, query the values so we can pass it to osgViewer
-    windowWidth = screen->w;
-    windowHeight = screen->h;
-    
-	viewer = new osgViewer::Viewer();
-
-	
-    gw = viewer->setUpViewerAsEmbeddedInWindow(0,0,windowWidth,windowHeight);
-	viewer->setReleaseContextAtEndOfFrameHint(false);
-	viewer->setThreadingModel(osgViewer::Viewer::SingleThreaded);
-
+    // create the view of the scene.
+    viewer = new osgViewer::Viewer;
+    window = viewer->setUpViewerAsEmbeddedInWindow(100,100,800,600);
+    viewer->setSceneData(loadedModel.get());
     viewer->setCameraManipulator(new osgGA::TrackballManipulator);
-
-
-	viewer->setSceneData( loadedModel.get());
+    //viewer->addEventHandler(new osgViewer::StatsHandler);
     viewer->realize();
 
-    done = false;
-#ifdef EMSCRIPTEN_
-	emscripten_set_main_loop(mainloop, 30, 0);
-#else
-    while( !done )
-    {
-        mainloop();
-    }
-#endif //EMSCRIPTEN_   
+    glutMainLoop();
+
+
+	window= 0;
+	viewer = 0;
+	//
+    
     return 0;
 }
 

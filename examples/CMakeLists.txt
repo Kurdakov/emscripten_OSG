@@ -190,63 +190,63 @@ IF(DYNAMIC_OPENSCENEGRAPH)
     #    ADD_SUBDIRECTORY(osgviewerGLUT)
     #ENDIF(GLUT_FOUND)
 
-    IF   (SDL_FOUND)
-        ADD_SUBDIRECTORY(osgviewerSDL)
-    ENDIF(SDL_FOUND)
+    #IF   (SDL_FOUND)
+    #    ADD_SUBDIRECTORY(osgviewerSDL)
+    #ENDIF(SDL_FOUND)
 
-    IF   (GTKGL_FOUND)
-        ADD_SUBDIRECTORY(osgviewerGTK)
-    ENDIF(GTKGL_FOUND)
+    #IF   (GTKGL_FOUND)
+    #    ADD_SUBDIRECTORY(osgviewerGTK)
+    #ENDIF(GTKGL_FOUND)
 
-    IF   (FOX_FOUND)
-        ADD_SUBDIRECTORY(osgviewerFOX)
-    ENDIF(FOX_FOUND)
+    #IF   (FOX_FOUND)
+    #    ADD_SUBDIRECTORY(osgviewerFOX)
+    #ENDIF(FOX_FOUND)
 
-    IF   (wxWidgets_FOUND AND CMAKE_BUILD_TYPE)
-        IF (${CMAKE_BUILD_TYPE} STREQUAL "Release")
-            ADD_SUBDIRECTORY(osgviewerWX)
-        ENDIF()
-    ENDIF()
+    #IF   (wxWidgets_FOUND AND CMAKE_BUILD_TYPE)
+    #    IF (${CMAKE_BUILD_TYPE} STREQUAL "Release")
+    #        ADD_SUBDIRECTORY(osgviewerWX)
+    #    ENDIF()
+    #ENDIF()
+    
+    #IF   ( (QT4_FOUND OR Qt5Widgets_FOUND) AND NOT OSG_GLES1_AVAILABLE AND NOT OSG_GLES2_AVAILABLE AND NOT OSG_GL3_AVAILABLE)
+    #
+    #    IF ( QT4_FOUND OR Qt5Widgets_FOUND)
+    #        ADD_SUBDIRECTORY(osgviewerQt)
+    #        ADD_SUBDIRECTORY(osgqfont)
+    #    ENDIF()
+	#
+    #    IF ( (QT4_FOUND AND QT_QTWEBKIT_FOUND) OR Qt5WebKitWidgets_FOUND )
+    #        ADD_SUBDIRECTORY(osgQtWidgets)
+    #        ADD_SUBDIRECTORY(osgQtBrowser)
+    #    ENDIF()
+    #
+    #ENDIF()
 
-    IF   ( (QT4_FOUND OR Qt5Widgets_FOUND) AND NOT OSG_GLES1_AVAILABLE AND NOT OSG_GLES2_AVAILABLE AND NOT OSG_GL3_AVAILABLE)
+    #IF   (FLTK_FOUND AND FLTK_GL_LIBRARY)
+    #    ADD_SUBDIRECTORY(osgviewerFLTK)
+    #ENDIF()
 
-        IF ( QT4_FOUND OR Qt5Widgets_FOUND)
-            ADD_SUBDIRECTORY(osgviewerQt)
-            ADD_SUBDIRECTORY(osgqfont)
-        ENDIF()
+    #IF   (WIN32)
+    #
+    #    OPTION(BUILD_MFC_EXAMPLE "Enable the build of the MFC Example" OFF)
+	#
+    #    IF   (BUILD_MFC_EXAMPLE)
+    #        ADD_SUBDIRECTORY(osgviewerMFC)
+    #    ENDIF(BUILD_MFC_EXAMPLE)
+    #
+    #ENDIF(WIN32)
 
-        IF ( (QT4_FOUND AND QT_QTWEBKIT_FOUND) OR Qt5WebKitWidgets_FOUND )
-            ADD_SUBDIRECTORY(osgQtWidgets)
-            ADD_SUBDIRECTORY(osgQtBrowser)
-        ENDIF()
+    #IF   (APPLE)
+    #    ADD_SUBDIRECTORY(osgviewerCocoa)
+    #ENDIF(APPLE)
 
-    ENDIF()
+    #IF(DIRECTINPUT_FOUND)
+    #   ADD_SUBDIRECTORY(osgdirectinput)
+    #ENDIF(DIRECTINPUT_FOUND)
 
-    IF   (FLTK_FOUND AND FLTK_GL_LIBRARY)
-        ADD_SUBDIRECTORY(osgviewerFLTK)
-    ENDIF()
-
-    IF   (WIN32)
-
-        OPTION(BUILD_MFC_EXAMPLE "Enable the build of the MFC Example" OFF)
-
-        IF   (BUILD_MFC_EXAMPLE)
-            ADD_SUBDIRECTORY(osgviewerMFC)
-        ENDIF(BUILD_MFC_EXAMPLE)
-
-    ENDIF(WIN32)
-
-    IF   (APPLE)
-        ADD_SUBDIRECTORY(osgviewerCocoa)
-    ENDIF(APPLE)
-
-    IF(DIRECTINPUT_FOUND)
-       ADD_SUBDIRECTORY(osgdirectinput)
-    ENDIF(DIRECTINPUT_FOUND)
-
-    IF   (LIBVNCSERVER_FOUND)
-        ADD_SUBDIRECTORY(osgvnc)
-    ENDIF(LIBVNCSERVER_FOUND)
+    #IF   (LIBVNCSERVER_FOUND)
+    #    ADD_SUBDIRECTORY(osgvnc)
+    #ENDIF(LIBVNCSERVER_FOUND)
 
     #to add subject to find socket#ADD_SUBDIRECTORY(osgcluster)
 
@@ -258,12 +258,16 @@ ELSE(DYNAMIC_OPENSCENEGRAPH)
         ADD_SUBDIRECTORY(osgviewerSDL2EmscriptenSTATIC)
     ENDIF(SDL_FOUND)
 	
+	IF   (GLUT_FOUND)
+        ADD_SUBDIRECTORY(osgviewerGLUTEmscriptenSTATIC)
+    ENDIF(GLUT_FOUND)
+	
     #ADD_SUBDIRECTORY(osgstaticviewer)
 
     # IPHONE_PORT@tom
-    IF(OSG_BUILD_PLATFORM_IPHONE OR OSG_BUILD_PLATFORM_IPHONE_SIMULATOR)
-        ADD_SUBDIRECTORY(osgviewerIPhone)
-    ENDIF()
+    #IF(OSG_BUILD_PLATFORM_IPHONE OR OSG_BUILD_PLATFORM_IPHONE_SIMULATOR)
+    #    ADD_SUBDIRECTORY(osgviewerIPhone)
+    #ENDIF()
      # IPHONE_PORT@tom
 
 ENDIF(DYNAMIC_OPENSCENEGRAPH)

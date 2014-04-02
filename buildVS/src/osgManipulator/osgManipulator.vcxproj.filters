@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="..\..\..\include\osgManipulator\AntiSquish" />
+    <None Include="..\..\..\include\osgManipulator\Command" />
+    <None Include="..\..\..\include\osgManipulator\CommandManager" />
+    <None Include="..\..\..\include\osgManipulator\Constraint" />
+    <None Include="..\..\..\include\osgManipulator\Dragger" />
+    <None Include="..\..\..\include\osgManipulator\Export" />
+    <None Include="..\..\..\include\osgManipulator\Projector" />
+    <None Include="..\..\..\include\osgManipulator\RotateCylinderDragger" />
+    <None Include="..\..\..\include\osgManipulator\RotateSphereDragger" />
+    <None Include="..\..\..\include\osgManipulator\Scale1DDragger" />
+    <None Include="..\..\..\include\osgManipulator\Scale2DDragger" />
+    <None Include="..\..\..\include\osgManipulator\ScaleAxisDragger" />
+    <None Include="..\..\..\include\osgManipulator\Selection" />
+    <None Include="..\..\..\include\osgManipulator\TabBoxDragger" />
+    <None Include="..\..\..\include\osgManipulator\TabBoxTrackballDragger" />
+    <None Include="..\..\..\include\osgManipulator\TabPlaneDragger" />
+    <None Include="..\..\..\include\osgManipulator\TabPlaneTrackballDragger" />
+    <None Include="..\..\..\include\osgManipulator\TrackballDragger" />
+    <None Include="..\..\..\include\osgManipulator\Translate1DDragger" />
+    <None Include="..\..\..\include\osgManipulator\Translate2DDragger" />
+    <None Include="..\..\..\include\osgManipulator\TranslateAxisDragger" />
+    <None Include="..\..\..\include\osgManipulator\TranslatePlaneDragger" />
+    <None Include="..\..\..\include\osgManipulator\Version" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\osgManipulator\Command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\AntiSquish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Constraint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Dragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Projector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\RotateCylinderDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\RotateSphereDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Scale1DDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Scale2DDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\ScaleAxisDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TabBoxDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TabBoxTrackballDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TabPlaneDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TabPlaneTrackballDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TrackballDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Translate1DDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Translate2DDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TranslateAxisDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\TranslatePlaneDragger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgManipulator\Version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

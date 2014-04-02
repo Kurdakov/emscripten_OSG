@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\osgDB\Archive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ObjectWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\InputStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\OutputStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Compressors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\AuthenticationMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Callbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ConvertUTF.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\DatabasePager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\DatabaseRevisions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\DotOsgWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\DynamicLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ExternalFileWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\FieldReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\FieldReaderIterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\FileCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\FileNameUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\FileUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\fstream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ImageOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ImagePager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\MimeTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Options.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\PluginQuery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ReaderWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\ReadFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Registry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\SharedStateManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\StreamOperator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\Version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\WriteFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgDB\XmlParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\osgDB\Archive">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\AuthenticationMap">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Callbacks">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ConvertUTF">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\DatabasePager">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\DatabaseRevisions">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\DataTypes">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\DotOsgWrapper">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\DynamicLibrary">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Export">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ExternalFileWriter">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\FileCache">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\FileNameUtils">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\FileUtils">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\fstream">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ImageOptions">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ImagePager">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ImageProcessor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Input">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\InputStream">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ObjectWrapper">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Options">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Output">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\OutputStream">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ParameterOutput">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\PluginQuery">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ReaderWriter">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\ReadFile">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Registry">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Serializer">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\SharedStateManager">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\StreamOperator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\Version">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\WriteFile">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgDB\XmlParser">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

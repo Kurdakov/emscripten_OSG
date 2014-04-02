@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\tristripper">
+      <UniqueIdentifier>{c4fcda88-c87a-4d55-8883-eb4d21117b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tristripper">
+      <UniqueIdentifier>{1bbf2ea5-afd2-43cd-9bb7-ea20f68619f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\osgUtil\ConvertVec">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\CubeMapGenerator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\CullVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\DelaunayTriangulator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\DisplayRequirementsVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\DrawElementTypeSimplifier">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\EdgeCollector">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Export">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\GLObjectsVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\HalfWayMapGenerator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\HighlightMapGenerator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\IncrementalCompileOperation">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\IntersectionVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\IntersectVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\LineSegmentIntersector">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\MeshOptimizers">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\OperationArrayFunctor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Optimizer">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\PerlinNoise">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\PlaneIntersector">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\PolytopeIntersector">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\PositionalStateContainer">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\PrintVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\ReflectionMapGenerator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\RenderBin">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\RenderLeaf">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\RenderStage">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\ReversePrimitiveFunctor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\SceneGraphBuilder">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\SceneView">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\ShaderGen">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Simplifier">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\SmoothingVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\StateGraph">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Statistics">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\TangentSpaceGenerator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Tessellator">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\TransformAttributeFunctor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\TransformCallback">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\TriStripVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\UpdateVisitor">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\..\include\osgUtil\Version">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\osgUtil\CubeMapGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\CullVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\DelaunayTriangulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\DisplayRequirementsVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\DrawElementTypeSimplifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\EdgeCollector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\GLObjectsVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\HalfWayMapGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\HighlightMapGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\IntersectionVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\IntersectVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\IncrementalCompileOperation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\LineSegmentIntersector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\MeshOptimizers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\Optimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\PerlinNoise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\PlaneIntersector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\PolytopeIntersector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\PositionalStateContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\PrintVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\RenderBin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\RenderLeaf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\RenderStage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\ReversePrimitiveFunctor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\SceneView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\ShaderGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\Simplifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\SmoothingVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\SceneGraphBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\StateGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\Statistics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\TangentSpaceGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\Tessellator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\TransformAttributeFunctor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\TransformCallback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\tristripper\src\tri_stripper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\tristripper\src\policy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\tristripper\src\connectivity_graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\TriStripVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\UpdateVisitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\osgUtil\Version.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\graph_array.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\types.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\cache_simulator.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\policy.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\heap_array.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\detail\connectivity_graph.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\public_types.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\osgUtil\tristripper\include\tri_stripper.h">
+      <Filter>Header Files\tristripper</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

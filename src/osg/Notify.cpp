@@ -239,11 +239,13 @@ void osg::StandardNotifyHandler::notify(osg::NotifySeverity severity, const char
 #ifndef WIN32_LEAN_AND_MEAN
     #define WIN32_LEAN_AND_MEAN
 #endif
+#ifndef EMSCRIPTEN
 #include <windows.h>
 
 void osg::WinDebugNotifyHandler::notify(osg::NotifySeverity severity, const char *message)
 {
     OutputDebugStringA(message);
 }
+#endif
 
 #endif

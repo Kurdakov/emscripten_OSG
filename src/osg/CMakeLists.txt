@@ -216,7 +216,7 @@ SET(TARGET_H
 #    ${OPENSCENEGRAPH_USER_DEFINED_DYNAMIC_OR_STATIC}
 #    ${LIB_PUBLIC_HEADERS}
 SET(TARGET_SRC
-    AlphaFunc.cpp
+    #AlphaFunc.cpp
     AnimationPath.cpp
     ApplicationUsage.cpp
     ArgumentParser.cpp

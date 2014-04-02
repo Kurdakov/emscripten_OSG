@@ -106,13 +106,8 @@ class OSGVIEWER_EXPORT Viewer : public ViewerBase, public osgViewer::View
 		#ifndef EMSCRIPTEN
 		virtual void getAllThreads(Threads& threads, bool onlyActive=true);
 
-        virtual void getOperationThreads(OperationThreads& threads, bool onlyActive=true)
+        virtual void getOperationThreads(OperationThreads& threads, bool onlyActive=true);
 		#endif //EMSCRIPTEN
-
- ;
-
-		//SKur
-		virtual void frameOSG(double simulationTime=USE_REFERENCE_TIME);
 
         virtual void getScenes(Scenes& scenes, bool onlyValid=true);
 

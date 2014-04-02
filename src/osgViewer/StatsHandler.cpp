@@ -247,16 +247,16 @@ bool StatsHandler::handle(const osgGA::GUIEventAdapter& ea, osgGA::GUIActionAdap
 
 void StatsHandler::updateThreadingModelText()
 {
-    switch(_threadingModel)
-    {
+    //SKur switch(_threadingModel)
+    //SKur{
        //SKur case(osgViewer::Viewer::SingleThreaded): _threadingModelText->setText("ThreadingModel: SingleThreaded"); break;
        //SKur case(osgViewer::Viewer::CullDrawThreadPerContext): _threadingModelText->setText("ThreadingModel: CullDrawThreadPerContext"); break;
       //SKur  case(osgViewer::Viewer::DrawThreadPerContext): _threadingModelText->setText("ThreadingModel: DrawThreadPerContext"); break;
       //SKur  case(osgViewer::Viewer::CullThreadPerCameraDrawThreadPerContext): _threadingModelText->setText("ThreadingModel: CullThreadPerCameraDrawThreadPerContext"); break;
       //SKur  case(osgViewer::Viewer::AutomaticSelection): _threadingModelText->setText("ThreadingModel: AutomaticSelection"); break;
       //SKur  default:
-       //SKur     _threadingModelText->setText("ThreadingModel: unknown"); break;
-    }
+      //SKur     _threadingModelText->setText("ThreadingModel: unknown"); break;
+    //SKur}
 }
 
 void StatsHandler::reset()

@@ -182,8 +182,10 @@ struct RetrieveQueriesCallback : public osg::Camera::DrawCallback
             while( !ready )
             {
                 // Apparently, must actually sleep here to avoid issues w/ NVIDIA Quadro.
+				#ifndef EMSCRIPTEN
                 OpenThreads::Thread::microSleep( 5 );
                 ext->glGetQueryObjectiv( tr->_id, GL_QUERY_RESULT_AVAILABLE, &ready );
+				#endif //EMSCRIPTEN
             };
 #endif
 #ifndef EMSCRIPTEN

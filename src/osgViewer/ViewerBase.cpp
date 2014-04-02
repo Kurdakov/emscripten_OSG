@@ -616,7 +616,8 @@ int ViewerBase::run()
         {
             if (checkNeedToDoFrame())
             {
-                frameOSG(-1.0);
+                //frameOSG(-1.0);
+				frame(-1.0);
             }
             else
             {
@@ -628,7 +629,8 @@ int ViewerBase::run()
         }
         else
         {
-            frameOSG(-1.0);
+            //frameOSG(-1.0);
+			frame(-1.0);
         }
 
         // work out if we need to force a sleep to hold back the frame rate
@@ -648,7 +650,7 @@ int ViewerBase::run()
 //	printf("hello testFunction1\n");
 //	simulationTime = 0.0;
 //}
-void ViewerBase::frameOSG(double simulationTime)
+void ViewerBase::frame(double simulationTime)
 {
     if (_done) return;
 

@@ -27,8 +27,7 @@
 
 namespace osgViewer {
 
-#define USE_REFERENCE_TIME -1
-	//DBL_MAX
+#define USE_REFERENCE_TIME DBL_MAX
 
 class View;
 
@@ -231,7 +230,7 @@ class OSGVIEWER_EXPORT ViewerBase : public virtual osg::Object
 
         /** Render a complete new frame.
           * Calls advance(), eventTraversal(), updateTraversal(), renderingTraversals(). */
-        virtual void frameOSG(double simulationTime=USE_REFERENCE_TIME);
+		virtual void frame(double simulationTime=USE_REFERENCE_TIME);
 
         virtual void advance(double simulationTime=USE_REFERENCE_TIME) = 0;
 

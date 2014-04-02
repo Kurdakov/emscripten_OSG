@@ -1354,28 +1354,3 @@ void Viewer::getUsage(osg::ApplicationUsage& usage) const
         (*hitr)->getUsage(usage);
     }
 }
-
-void Viewer::frameOSG(double simulationTime)
-{
-	 if (_done) return;
-
-    // OSG_NOTICE<<std::endl<<"CompositeViewer::frame()"<<std::endl<<std::endl;
-
-    if (_firstFrame)
-    {
-        viewerInit();
-
-        if (!isRealized())
-        {
-            realize();
-        }
-
-        _firstFrame = false;
-    }
-    advance(simulationTime);
-
-    eventTraversal();
-    updateTraversal();
-    renderingTraversals();
-}
-

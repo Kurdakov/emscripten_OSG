@@ -153,10 +153,11 @@ buildPlainBoxData( const osg::Vec3& halfExtents, osg::Geometry* geom )
 osg::Geometry*
 makePlainBox( const osg::Vec3& halfExtents, osg::Geometry* geometry = NULL )
 {
-    osg::ref_ptr< osg::Geometry > geom( geometry );
+    osg::ref_ptr< osg::Geometry > geom( geometry ); 
     if( geom == NULL )
         geom = new osg::Geometry;
 
+	geom->setUseVertexBufferObjects(true); 
     bool result = buildPlainBoxData( halfExtents, geom.get() );
     if( !result )
     {
@@ -365,13 +366,12 @@ osgViewer::Viewer* viewer;
 
 bool done;
 
-#ifndef EMSCRIPTEN_
+//#ifdef EMSCRIPTEN
 SDL_Window* window;
 SDL_Surface *screen;
 osg::ref_ptr<osgViewer::GraphicsWindowEmbedded> gw;
-#else
+//#endif
 
-#endif
 
 void mainloop()
 {
@@ -414,7 +414,7 @@ void mainloop()
 		}
 
 	    // draw the new frame
-        viewer->frameOSG(-1.0);
+        viewer->frame();
 
         // Swap Buffers
 #ifdef EMSCRIPTEN_
@@ -457,14 +457,14 @@ int main( int argc, char **argv )
 
 
 	#ifndef EMSCRIPTEN_
-	SDL_GL_SetAttribute(SDL_GL_CONTEXT_EGL, 1);
+	 SDL_GL_SetAttribute(SDL_GL_CONTEXT_EGL, 1);
 	#endif	//EMSCRIPTEN
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
 	
 
 #ifdef EMSCRIPTEN_
-	screen = SDL_SetVideoMode(640, 480,, 32, SDL_HWSURFACE | SDL_OPENGL);
+	screen = SDL_SetVideoMode(640, 480, 32,  SDL_OPENGL);//SDL_HWSURFACE |
 	if ( screen == NULL )
 	{
 		exit(1);
@@ -473,11 +473,12 @@ int main( int argc, char **argv )
 	window = SDL_CreateWindow("ContextWindow", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_OPENGL );//| SDL_WINDOW_FULLSCREEN
 	// set up the surface to render to
 	screen = SDL_GetWindowSurface(window);
+	SDL_GLContext glcontext = SDL_GL_CreateContext(window);
 #endif
   
 
     
-   SDL_GLContext glcontext = SDL_GL_CreateContext(window);
+  
 
    SDL_GL_SetSwapInterval(0);
    
@@ -527,6 +528,9 @@ int main( int argc, char **argv )
 	viewer->setThreadingModel(osgViewer::Viewer::SingleThreaded);
 
     viewer->setCameraManipulator(new osgGA::TrackballManipulator);
+
+
+	viewer->getCamera()->setClearColor(osg::Vec4(0.8f,0.8f,0.8f,0.8f));
 
 
 	viewer->setSceneData( loadedModel.get());

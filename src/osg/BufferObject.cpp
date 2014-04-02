@@ -547,7 +547,6 @@ void GLBufferObject::Extensions::_glBindBuffer(GLenum target, GLuint buffer) con
     if (glBindBuffer) glBindBuffer(target, buffer);
     else OSG_WARN<<"Error: glBindBuffer not supported by OpenGL driver"<<std::endl;
 #else
-	printf("bind buffer now \n");
 	glBindBuffer(target, buffer);
 #endif
 }

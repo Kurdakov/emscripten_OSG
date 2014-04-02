@@ -113,7 +113,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osg.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osgDB.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osgGA.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osgManipulator.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osgUtil.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Debug\osgViewer.bc;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\buildVS\Emscripten\Debug\osg.bc;$(SolutionDir)\buildVS\Emscripten\Debug\osgDB.bc;$(SolutionDir)\buildVS\Emscripten\Debug\osgGA.bc;$(SolutionDir)\buildVS\Emscripten\Debug\osgManipulator.bc;$(SolutionDir)\buildVS\Emscripten\Debug\osgUtil.bc;$(SolutionDir)\buildVS\Emscripten\Debug\osgViewer.bc;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -154,7 +154,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osg.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osgDB.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osgGA.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osgManipulator.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osgUtil.bc;D:\VSEmscripten\projects\gitHubOSG\emscripten_OSGNew\buildVS\Emscripten\Release\osgViewer.bc;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\Emscripten\Release\osg.bc;$(SolutionDir)\buildVS\Emscripten\Release\osgDB.bc;$(SolutionDir)\buildVS\Emscripten\Release\osgGA.bc;$(SolutionDir)\buildVS\Emscripten\Release\osgManipulator.bc;$(SolutionDir)\buildVS\Emscripten\Release\osgUtil.bc;$(SolutionDir)\buildVS\Emscripten\Release\osgViewer.bc;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
